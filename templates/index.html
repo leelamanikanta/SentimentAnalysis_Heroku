@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Sentiment Analysis (Beta)</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='templates/style.css') }}">
+</head>
+
+<body>
+ <div class="login">
+	<center><h2>Text Classification</h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="InputText" placeholder="InputText" required="required" style="height: 200px;" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   {{ prediction_text }}
+	</center>
+ </div>
+
+
+</body>
+</html>
